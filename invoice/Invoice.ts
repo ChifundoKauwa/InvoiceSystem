@@ -1,5 +1,10 @@
+import { InvoiceStatus } from "./IncoiceStatus";
+import { InvoiceItem } from "./InvoiceItem";
+import { Money } from "../shared/Money";
+import { DomainEvent } from "./DomainEvent";
+import { InvoiceIssued, InvoicePaid, InvoiceOverdue, InvoiceVoided } from "./InvoiceEvent";
 
-class Invoice {
+export class Invoice {
     private state:InvoiceStatus=InvoiceStatus.draft;
     private readonly id:string;
     private readonly items:InvoiceItem[]=[];
@@ -96,6 +101,9 @@ class Invoice {
     }
     getId():string{
         return this.id;
+    }
+    getCurrency():string{
+        return this.currency;
     }
     getIssueAt():Date{
         return this.issueAt;
