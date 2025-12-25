@@ -1,21 +1,33 @@
+import { Money } from "../shared/Money";
 
-class InvoiceItem{
+export class InvoiceItem{
+    private readonly id: string;
     private readonly unitprice: Money;
     private readonly quantity: number; 
     private readonly description:string;
     
-    constructor(unitprice:Money, quantity:number, description:string){
+    constructor(id: string, unitprice:Money, quantity:number, description:string){
         if(!description || description.trim().length===0){
             throw new Error("description is required")
+        }
+        if(!id || id.trim().length===0){
+            throw new Error("id is required")
         }
        
         if(!Number.isInteger(quantity) || quantity<=0){
             throw new Error("quantity must be a positive integer")
         }
+        this.id = id;
         this.unitprice=unitprice;
         this.quantity=quantity;
         this.description=description;
     }   
+    getId():string {
+        return this.id;
+    }
+    getDescription():string {
+        return this.description;
+    }
     subtotal():Money{
         
         let totalAmount= new Money(0,this.unitprice.getCurrency());
