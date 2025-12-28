@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+npm-debug.log
+
+# Build output (will be copied from builder stage)
+dist/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Version control
+.git/
+.gitignore
+
+# Documentation & Test files
+*.md
+test/
+coverage/
+
+# IDE & Development tools
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Linting & Formatting
+.eslintignore
+.eslintrc*
+.prettierignore
+.prettierrc*
+jest.config.js
+# Note: tsconfig.json, tsconfig.build.json, and nest-cli.json are needed for build
+# They are explicitly copied in Dockerfile
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.circleci/
+
+# Docker files (don't need to copy into image)
+Dockerfile
+docker-compose.yml
+.dockerignore
