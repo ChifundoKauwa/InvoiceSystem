@@ -1,5 +1,6 @@
 import { DataSourceOptions } from 'typeorm';
 import { InvoiceEntity, InvoiceItemEntity } from './persistence/entities';
+import { User } from '../users/users.entity';
 
 /**
  * INFRASTRUCTURE LAYER: TypeORM Configuration
@@ -21,7 +22,7 @@ export const getTypeOrmConfig = (): DataSourceOptions => {
     return {
         type: 'postgres',
         url: databaseUrl,
-        entities: [InvoiceEntity, InvoiceItemEntity],
+        entities: [InvoiceEntity, InvoiceItemEntity, User],
         synchronize: true,
         logging: true,
         dropSchema: false,
