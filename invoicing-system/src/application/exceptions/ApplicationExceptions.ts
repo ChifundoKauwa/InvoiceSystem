@@ -1,10 +1,8 @@
-/**
- * APPLICATION LAYER: Application Exceptions
- * 
- * Domain-aware exceptions thrown by use cases.
- * Distinguish between user errors and system errors.
- * Controllers map these to appropriate HTTP responses.
- */
+
+ // APPLICATION LAYER: Application Exceptions
+  
+ // Domain-aware exceptions thrown by use cases.
+
 
 export abstract class ApplicationException extends Error {
     constructor(message: string) {
