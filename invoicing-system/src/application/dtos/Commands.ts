@@ -1,9 +1,6 @@
-/**
- * APPLICATION LAYER: DTOs for Invoice Commands
- * 
- * Request models for use cases.
- * These bridge HTTP/external input to domain commands.
- */
+
+ // APPLICATION LAYER: DTOs for Invoice Commands
+
 
 export class IssueInvoiceCommand {
     constructor(
