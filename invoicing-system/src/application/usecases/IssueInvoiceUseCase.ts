@@ -14,8 +14,8 @@ import { InvoiceNotFoundError, InvalidInvoiceStateError, EventPublishingError } 
  * 3. Persist changed aggregate
  * 4. Publish domain events to event bus
  * 
- * Notice: All invariant checks happen in domain.issue() method.
- * Use case is thin orchestration layer.
+ * All invariant checks happen in domain.issue() method.
+ 
  */
 @Injectable()
 export class IssueInvoiceUseCase {
